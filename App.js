@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { ImageBackground, View, Text } from 'react-native';
+
+import imgRaposa from './assets/raposa.png';
+import imgAterrissagem from './assets/aterrissagem.png';
+import imgToxico from './assets/design-toxico.png';
+import estilos from './estilos';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={ estilos.container } >
+      <Text style={ estilos.titulo }>Top Fotografias</Text>
+      <Text style={ estilos.subtitulo }>Candidatas a prêmio de fotografia da vida selvagem em 2021</Text>
+      
+      <ImageBackground style={ estilos.card } source={ imgRaposa }>
+        <Text style={ estilos.cardTitulo }>Raposa da tempestade</Text>
+        <Text style={ estilos.cardParagrafo }>Jonny Armstrong</Text>
+      </ImageBackground>
+      
+      <ImageBackground style={ estilos.card } source={ imgAterrissagem }>
+        <Text style={ estilos.cardTitulo }>Aterrissagem de Apolo</Text>
+        <Text style={ estilos.cardParagrafo }>Ermelin Dupiex</Text>
+      </ImageBackground>
+      
+      <ImageBackground style={ estilos.card } source={ imgToxico }>
+        <Text style={ estilos.cardTitulo }>Design tóxico</Text>
+        <Text style={ estilos.cardParagrafo }>Gheorghe Popa</Text>
+      </ImageBackground>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
